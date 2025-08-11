@@ -1,20 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Networld Tours & Travels - Your Gateway to Andaman Paradise. 20+ years of creating unforgettable memories in Port Blair, Havelock & Neil Island. Complete tour packages, scuba diving, bike rentals & more.">
-    <meta name="keywords" content="Andaman tour packages, Port Blair tours, Havelock Island, Neil Island, honeymoon packages, family tours, adventure tours, scuba diving Andaman">
+    <meta name="description"
+        content="Networld Tours & Travels - Your Gateway to Andaman Paradise. 20+ years of creating unforgettable memories in Port Blair, Havelock & Neil Island. Complete tour packages, scuba diving, bike rentals & more.">
+    <meta name="keywords"
+        content="Andaman tour packages, Port Blair tours, Havelock Island, Neil Island, honeymoon packages, family tours, adventure tours, scuba diving Andaman">
     <meta name="author" content="Networld Tours & Travels">
     <meta property="og:title" content="Networld Tours & Travels - Discover Paradise in Andaman Islands">
-    <meta property="og:description" content="20+ Years of Creating Unforgettable Memories in Andaman. Family, Honeymoon, Adventure & Luxury Packages.">
-    <meta property="og:image" content="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg">
+    <meta property="og:description"
+        content="20+ Years of Creating Unforgettable Memories in Andaman. Family, Honeymoon, Adventure & Luxury Packages.">
+    <meta property="og:image"
+        content="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg">
     <meta property="og:url" content="https://networldtours.com">
     <meta property="og:type" content="website">
     <title>Networld Tours & Travels - Discover Paradise in Andaman Islands</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
 </head>
+
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
@@ -49,9 +59,10 @@
     </nav>
 
     <!-- Hero Section -->
-    <section id="home" class="hero">
+    <section id="home" class="hero" data-aos="fade-up">
         <div class="hero-background">
-            <img src="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg" alt="Radhanagar Beach Havelock Island" class="hero-bg-img">
+            <img src="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg"
+                alt="Radhanagar Beach Havelock Island" class="hero-bg-img">
         </div>
         <div class="hero-overlay"></div>
         <div class="container">
@@ -117,7 +128,7 @@
     </section>
 
     <!-- Package Categories -->
-    <section id="packages" class="packages-section">
+    <section id="packages" class="packages-section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Choose Your Perfect Experience</h2>
@@ -126,73 +137,85 @@
             <div class="packages-grid">
                 <div class="package-card" data-category="family">
                     <div class="package-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749810915/pplx_project_search_images/ea9c857b2401596bc5233d8c3866582267b7deb2.jpg" alt="Family Package">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749810915/pplx_project_search_images/ea9c857b2401596bc5233d8c3866582267b7deb2.jpg"
+                            alt="Family Package">
                         <div class="package-badge">Family</div>
                     </div>
                     <div class="package-content">
                         <h3>Family Adventures</h3>
-                        <p>Perfect for creating lasting memories with your loved ones. Kid-friendly activities and comfortable accommodations.</p>
+                        <p>Perfect for creating lasting memories with your loved ones. Kid-friendly activities and
+                            comfortable accommodations.</p>
                         <ul class="package-highlights">
                             <li><i class="fas fa-check"></i>Glass Bottom Boat Rides</li>
                             <li><i class="fas fa-check"></i>Family-friendly Activities</li>
                             <li><i class="fas fa-check"></i>Cultural Experiences</li>
                         </ul>
                         <div class="package-price">Starting from ₹25,000</div>
-                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('family')">View Packages</button>
+                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('family')">View
+                            Packages</button>
                     </div>
                 </div>
 
                 <div class="package-card" data-category="honeymoon">
                     <div class="package-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754496800/pplx_project_search_images/a4dd3319a533e77f2791a4859e952ebff439a0be.jpg" alt="Honeymoon Package">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754496800/pplx_project_search_images/a4dd3319a533e77f2791a4859e952ebff439a0be.jpg"
+                            alt="Honeymoon Package">
                         <div class="package-badge">Honeymoon</div>
                     </div>
                     <div class="package-content">
                         <h3>Romantic Getaways</h3>
-                        <p>Celebrate your love in paradise with intimate experiences and romantic settings designed for couples.</p>
+                        <p>Celebrate your love in paradise with intimate experiences and romantic settings designed for
+                            couples.</p>
                         <ul class="package-highlights">
                             <li><i class="fas fa-check"></i>Private Beach Dinners</li>
                             <li><i class="fas fa-check"></i>Couple Spa Sessions</li>
                             <li><i class="fas fa-check"></i>Romantic Photography</li>
                         </ul>
                         <div class="package-price">Starting from ₹30,000</div>
-                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('honeymoon')">View Packages</button>
+                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('honeymoon')">View
+                            Packages</button>
                     </div>
                 </div>
 
                 <div class="package-card" data-category="adventure">
                     <div class="package-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749810913/pplx_project_search_images/5279fb809574f29515f08409bc5bf617dbfda44b.jpg" alt="Adventure Package">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1749810913/pplx_project_search_images/5279fb809574f29515f08409bc5bf617dbfda44b.jpg"
+                            alt="Adventure Package">
                         <div class="package-badge">Adventure</div>
                     </div>
                     <div class="package-content">
                         <h3>Thrill & Adventure</h3>
-                        <p>For adrenaline seekers and adventure enthusiasts. Experience the best water sports and outdoor activities.</p>
+                        <p>For adrenaline seekers and adventure enthusiasts. Experience the best water sports and
+                            outdoor activities.</p>
                         <ul class="package-highlights">
                             <li><i class="fas fa-check"></i>Scuba Diving Certification</li>
                             <li><i class="fas fa-check"></i>Sea Walking & Jet Skiing</li>
                             <li><i class="fas fa-check"></i>Trekking Expeditions</li>
                         </ul>
                         <div class="package-price">Starting from ₹40,000</div>
-                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('adventure')">View Packages</button>
+                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('adventure')">View
+                            Packages</button>
                     </div>
                 </div>
 
                 <div class="package-card" data-category="luxury">
                     <div class="package-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754070020/pplx_project_search_images/1196b30b14d7f5af7bde97d5d75bdaa16c449fb4.jpg" alt="Luxury Package">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754070020/pplx_project_search_images/1196b30b14d7f5af7bde97d5d75bdaa16c449fb4.jpg"
+                            alt="Luxury Package">
                         <div class="package-badge">Luxury</div>
                     </div>
                     <div class="package-content">
                         <h3>Premium Luxury</h3>
-                        <p>Indulge in the finest experiences with premium accommodations, private services, and exclusive access.</p>
+                        <p>Indulge in the finest experiences with premium accommodations, private services, and
+                            exclusive access.</p>
                         <ul class="package-highlights">
                             <li><i class="fas fa-check"></i>5-Star Accommodations</li>
                             <li><i class="fas fa-check"></i>Private Butler Service</li>
                             <li><i class="fas fa-check"></i>Helicopter Transfers</li>
                         </ul>
                         <div class="package-price">Starting from ₹60,000</div>
-                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('luxury')">View Packages</button>
+                        <button class="btn btn--primary btn--full-width" onclick="viewPackages('luxury')">View
+                            Packages</button>
                     </div>
                 </div>
             </div>
@@ -200,7 +223,7 @@
     </section>
 
     <!-- Services Section -->
-    <section id="services" class="services-section">
+    <section id="services" class="services-section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Complete Travel Solutions</h2>
@@ -212,49 +235,55 @@
                         <i class="fas fa-map-marked-alt"></i>
                     </div>
                     <h3>Complete Tour Packages</h3>
-                    <p>Customized itineraries covering all major attractions with comfortable accommodations and seamless transfers.</p>
+                    <p>Customized itineraries covering all major attractions with comfortable accommodations and
+                        seamless transfers.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-motorcycle"></i>
                     </div>
                     <h3>Bike & Scooty Rentals</h3>
-                    <p>Well-maintained vehicles for exploring the islands at your own pace. Flexible rental terms and competitive rates.</p>
+                    <p>Well-maintained vehicles for exploring the islands at your own pace. Flexible rental terms and
+                        competitive rates.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-swimmer"></i>
                     </div>
                     <h3>Scuba Diving Center</h3>
-                    <p>Professional diving courses and guided underwater experiences. Explore vibrant coral reefs and marine life.</p>
+                    <p>Professional diving courses and guided underwater experiences. Explore vibrant coral reefs and
+                        marine life.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-ship"></i>
                     </div>
                     <h3>Island Hopping Tours</h3>
-                    <p>Comfortable ferry services and island tours. Visit multiple destinations with expert local guides.</p>
+                    <p>Comfortable ferry services and island tours. Visit multiple destinations with expert local
+                        guides.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-bed"></i>
                     </div>
                     <h3>Accommodation Booking</h3>
-                    <p>Wide range of hotels and resorts from budget to luxury. Best rates and prime locations guaranteed.</p>
+                    <p>Wide range of hotels and resorts from budget to luxury. Best rates and prime locations
+                        guaranteed.</p>
                 </div>
                 <div class="service-card">
                     <div class="service-icon">
                         <i class="fas fa-headset"></i>
                     </div>
                     <h3>24/7 Support</h3>
-                    <p>Round-the-clock assistance during your trip. Local support team available for any requirements.</p>
+                    <p>Round-the-clock assistance during your trip. Local support team available for any requirements.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Destinations Section -->
-    <section id="destinations" class="destinations-section">
+    <section id="destinations" class="destinations-section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Explore Pristine Destinations</h2>
@@ -263,14 +292,17 @@
             <div class="destinations-grid">
                 <div class="destination-card">
                     <div class="destination-image">
-                        <img src="https://i0.wp.com/weekendyaari.in/wp-content/uploads/2024/11/andaman-Cellular-Jail.webp?fit=800%2C600&ssl=1" alt="Port Blair Cellular Jail">
+                        <img src="https://i0.wp.com/weekendyaari.in/wp-content/uploads/2024/11/andaman-Cellular-Jail.webp?fit=800%2C600&ssl=1"
+                            alt="Port Blair Cellular Jail">
                         <div class="destination-overlay">
-                            <button class="btn btn--outline" onclick="showDestinationDetails('port-blair')">Explore Port Blair</button>
+                            <button class="btn btn--outline" onclick="showDestinationDetails('port-blair')">Explore Port
+                                Blair</button>
                         </div>
                     </div>
                     <div class="destination-content">
                         <h3>Port Blair</h3>
-                        <p>The capital city and gateway to Andaman Islands. Rich in history with colonial architecture and cultural attractions.</p>
+                        <p>The capital city and gateway to Andaman Islands. Rich in history with colonial architecture
+                            and cultural attractions.</p>
                         <ul class="destination-highlights">
                             <li><i class="fas fa-landmark"></i>Cellular Jail</li>
                             <li><i class="fas fa-building"></i>Anthropological Museum</li>
@@ -282,14 +314,17 @@
 
                 <div class="destination-card">
                     <div class="destination-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg" alt="Havelock Island Radhanagar Beach">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1752736572/pplx_project_search_images/ba0aca60c62ec60ea0c8aa4a024ad903f8866ecb.jpg"
+                            alt="Havelock Island Radhanagar Beach">
                         <div class="destination-overlay">
-                            <button class="btn btn--outline" onclick="showDestinationDetails('havelock')">Explore Havelock</button>
+                            <button class="btn btn--outline" onclick="showDestinationDetails('havelock')">Explore
+                                Havelock</button>
                         </div>
                     </div>
                     <div class="destination-content">
                         <h3>Havelock Island</h3>
-                        <p>Paradise island famous for pristine beaches and world-class water sports. Perfect for beach lovers and adventure seekers.</p>
+                        <p>Paradise island famous for pristine beaches and world-class water sports. Perfect for beach
+                            lovers and adventure seekers.</p>
                         <ul class="destination-highlights">
                             <li><i class="fas fa-umbrella-beach"></i>Radhanagar Beach</li>
                             <li><i class="fas fa-swimmer"></i>Elephant Beach</li>
@@ -301,14 +336,17 @@
 
                 <div class="destination-card">
                     <div class="destination-image">
-                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754496800/pplx_project_search_images/599bfea19eacf3857013ba70ff1a997261c9c698.jpg" alt="Neil Island Natural Bridge">
+                        <img src="https://pplx-res.cloudinary.com/image/upload/v1754496800/pplx_project_search_images/599bfea19eacf3857013ba70ff1a997261c9c698.jpg"
+                            alt="Neil Island Natural Bridge">
                         <div class="destination-overlay">
-                            <button class="btn btn--outline" onclick="showDestinationDetails('neil')">Explore Neil Island</button>
+                            <button class="btn btn--outline" onclick="showDestinationDetails('neil')">Explore Neil
+                                Island</button>
                         </div>
                     </div>
                     <div class="destination-content">
                         <h3>Neil Island</h3>
-                        <p>Serene island known for natural beauty and peaceful atmosphere. Ideal for relaxation and nature photography.</p>
+                        <p>Serene island known for natural beauty and peaceful atmosphere. Ideal for relaxation and
+                            nature photography.</p>
                         <ul class="destination-highlights">
                             <li><i class="fas fa-bridge"></i>Natural Bridge</li>
                             <li><i class="fas fa-sun"></i>Bharatpur Beach</li>
@@ -322,7 +360,7 @@
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials-section">
+    <section class="testimonials-section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>What Our Travelers Say</h2>
@@ -339,7 +377,8 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <blockquote>
-                            "Goede scooter, behulpzame plek! Excellent service and very helpful staff. Made our Andaman trip memorable."
+                            "Goede scooter, behulpzame plek! Excellent service and very helpful staff. Made our Andaman
+                            trip memorable."
                         </blockquote>
                         <div class="testimonial-author">
                             <strong>Sanne</strong>
@@ -357,7 +396,8 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <blockquote>
-                            "Excellent service, staff is very helpful and polite, owner is also very helpful. Highly recommend for Andaman tours!"
+                            "Excellent service, staff is very helpful and polite, owner is also very helpful. Highly
+                            recommend for Andaman tours!"
                         </blockquote>
                         <div class="testimonial-author">
                             <strong>Nihar Ranjan Mahakul</strong>
@@ -375,7 +415,8 @@
                             <i class="fas fa-star"></i>
                         </div>
                         <blockquote>
-                            "Very good experience. Got a new scooter and the staffs were really friendly. Perfect service for exploring the islands."
+                            "Very good experience. Got a new scooter and the staffs were really friendly. Perfect
+                            service for exploring the islands."
                         </blockquote>
                         <div class="testimonial-author">
                             <strong>MOHIT RATNESH</strong>
@@ -396,13 +437,15 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="about-section">
+    <section id="about" class="about-section" data-aos="fade-up">
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
                     <h2>20+ Years of Excellence in Andaman Tourism</h2>
-                    <p>Since 2002, Networld Tours & Travels has been the trusted partner for thousands of travelers exploring the pristine beauty of Andaman Islands. Located in the heart of Port Blair, we have grown from a small local business to one of the most respected tour operators in the region.</p>
-                    
+                    <p>Since 2002, Networld Tours & Travels has been the trusted partner for thousands of travelers
+                        exploring the pristine beauty of Andaman Islands. Located in the heart of Port Blair, we have
+                        grown from a small local business to one of the most respected tour operators in the region.</p>
+
                     <div class="about-stats">
                         <div class="stat-item">
                             <div class="stat-number">5000+</div>
@@ -447,14 +490,15 @@
                     </div>
                 </div>
                 <div class="about-image">
-                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754070020/pplx_project_search_images/1196b30b14d7f5af7bde97d5d75bdaa16c449fb4.jpg" alt="Andaman Islands Aerial View">
+                    <img src="https://pplx-res.cloudinary.com/image/upload/v1754070020/pplx_project_search_images/1196b30b14d7f5af7bde97d5d75bdaa16c449fb4.jpg"
+                        alt="Andaman Islands Aerial View">
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="contact-section">
+    <section id="contact" class="contact-section" data-aos="fade-up">
         <div class="container">
             <div class="section-header">
                 <h2>Get in Touch</h2>
@@ -522,7 +566,8 @@
                             </select>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="message" rows="5" placeholder="Your Message" required></textarea>
+                            <textarea class="form-control" name="message" rows="5" placeholder="Your Message"
+                                required></textarea>
                         </div>
                         <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
                     </form>
@@ -532,12 +577,13 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer">
+    <footer class="footer" data-aos="fade-up">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>Networld Tours & Travels</h3>
-                    <p>Your trusted partner for exploring the pristine beauty of Andaman Islands. Creating unforgettable memories since 2002.</p>
+                    <p>Your trusted partner for exploring the pristine beauty of Andaman Islands. Creating unforgettable
+                        memories since 2002.</p>
                     <div class="social-links">
                         <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
                         <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
@@ -568,7 +614,8 @@
                     <h4>Contact Info</h4>
                     <p><i class="fas fa-map-marker-alt"></i> Aberdeen Bazar, Port Blair</p>
                     <p><i class="fas fa-phone"></i> <a href="tel:+919933897474">+91 99338 97474</a></p>
-                    <p><i class="fas fa-envelope"></i> <a href="mailto:networldtoursandaman@gmail.com">networldtoursandaman@gmail.com</a></p>
+                    <p><i class="fas fa-envelope"></i> <a
+                            href="mailto:networldtoursandaman@gmail.com">networldtoursandaman@gmail.com</a></p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -638,13 +685,15 @@
                             <input type="tel" class="form-control" name="phone" placeholder="Phone Number" required>
                         </div>
                         <div class="form-group">
-                            <input type="number" class="form-control" name="travelers" placeholder="Number of Travelers" min="1" required>
+                            <input type="number" class="form-control" name="travelers" placeholder="Number of Travelers"
+                                min="1" required>
                         </div>
                         <div class="form-group">
                             <input type="date" class="form-control" name="travel_date" required>
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control" name="special_requirements" rows="4" placeholder="Special Requirements (Optional)"></textarea>
+                            <textarea class="form-control" name="special_requirements" rows="4"
+                                placeholder="Special Requirements (Optional)"></textarea>
                         </div>
                     </div>
                     <div class="booking-step" data-step="3">
@@ -654,9 +703,12 @@
                         </div>
                     </div>
                     <div class="booking-actions">
-                        <button type="button" class="btn btn--outline" id="prev-step" onclick="previousBookingStep()" style="display: none;">Previous</button>
-                        <button type="button" class="btn btn--primary" id="next-step" onclick="nextBookingStep()">Next</button>
-                        <button type="submit" class="btn btn--primary" id="submit-booking" style="display: none;">Confirm Booking</button>
+                        <button type="button" class="btn btn--outline" id="prev-step" onclick="previousBookingStep()"
+                            style="display: none;">Previous</button>
+                        <button type="button" class="btn btn--primary" id="next-step"
+                            onclick="nextBookingStep()">Next</button>
+                        <button type="submit" class="btn btn--primary" id="submit-booking"
+                            style="display: none;">Confirm Booking</button>
                     </div>
                 </form>
             </div>
@@ -672,7 +724,8 @@
                     <i class="fas fa-check-circle"></i>
                 </div>
                 <h2>Thank You!</h2>
-                <p id="success-message">Your inquiry has been submitted successfully. We'll get back to you within 24 hours.</p>
+                <p id="success-message">Your inquiry has been submitted successfully. We'll get back to you within 24
+                    hours.</p>
                 <div class="success-actions">
                     <button class="btn btn--primary" onclick="closeModal('success-modal')">Close</button>
                     <a href="https://wa.me/919933897474" target="_blank" class="btn btn--outline">
@@ -697,8 +750,17 @@
     </div>
 
     <!-- Test Commit -->
-     <!-- Test Commit 2 -->
+    <!-- Test Commit 2 -->
+    <script>
+        AOS.init({ duration: 1000, once: true });
+
+        window.addEventListener('load', () => {
+            gsap.from("h1", { opacity: 0, y: -50, duration: 1 });
+            gsap.from(".section", { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
+        });
+    </script>
 
     <script src="app.js"></script>
 </body>
+
 </html>

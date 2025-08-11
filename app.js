@@ -118,7 +118,7 @@ let selectedPackage = null;
 // Package viewing functionality
 function viewPackages(category) {
     console.log('viewPackages called with category:', category);
-    
+
     try {
         const packages = packageData[category];
         if (!packages) {
@@ -126,10 +126,10 @@ function viewPackages(category) {
             alert('Package information not available');
             return;
         }
-        
+
         const modalTitle = document.getElementById('modal-title');
         const modalBody = document.getElementById('modal-body');
-        
+
         if (!modalTitle || !modalBody) {
             console.error('Modal elements not found');
             alert('Unable to display package details');
@@ -144,9 +144,9 @@ function viewPackages(category) {
         };
 
         modalTitle.textContent = categoryTitles[category];
-        
+
         let packagesHtml = '<div class="packages-list">';
-        
+
         packages.forEach((pkg, index) => {
             packagesHtml += `
                 <div class="package-detail-card">
@@ -184,14 +184,14 @@ function viewPackages(category) {
                 </div>
             `;
         });
-        
+
         packagesHtml += '</div>';
         modalBody.innerHTML = packagesHtml;
-        
+
         showModal('package-modal');
-        
+
         console.log('Package modal displayed successfully');
-        
+
     } catch (error) {
         console.error('Error in viewPackages:', error);
         alert('An error occurred while loading package details');
@@ -290,7 +290,7 @@ function populatePackageSelection() {
         console.error('Package selection element not found');
         return;
     }
-    
+
     if (selectedPackage) {
         packageSelection.innerHTML = `
             <div class="package-option selected" data-category="${selectedPackage.category}" data-index="${selectedPackage.index}">
@@ -317,9 +317,9 @@ function showAllPackages() {
 function showAllPackagesInBooking() {
     const packageSelection = document.getElementById('package-selection');
     if (!packageSelection) return;
-    
+
     let html = '<div class="package-categories">';
-    
+
     Object.keys(packageData).forEach(category => {
         const categoryTitles = {
             family: 'Family Tours',
@@ -327,9 +327,9 @@ function showAllPackagesInBooking() {
             adventure: 'Adventure',
             luxury: 'Luxury'
         };
-        
+
         html += `<h4>${categoryTitles[category]}</h4>`;
-        
+
         packageData[category].forEach((pkg, index) => {
             html += `
                 <div class="package-option" data-category="${category}" data-index="${index}" onclick="selectPackage('${category}', ${index})">
@@ -340,32 +340,32 @@ function showAllPackagesInBooking() {
             `;
         });
     });
-    
+
     html += '</div>';
     packageSelection.innerHTML = html;
 }
 
 function selectPackage(category, index) {
     console.log('selectPackage called:', category, index);
-    
+
     // Remove previous selection
     document.querySelectorAll('.package-option').forEach(option => {
         option.classList.remove('selected');
     });
-    
+
     // Add selection to clicked option
     const clickedOption = event.target.closest('.package-option');
     if (clickedOption) {
         clickedOption.classList.add('selected');
     }
-    
+
     selectedPackage = { category, index, ...packageData[category][index] };
 }
 
 // Booking step management
 function nextBookingStep() {
     console.log('nextBookingStep called. Current step:', currentBookingStep);
-    
+
     if (currentBookingStep === 1) {
         if (!selectedPackage) {
             alert('Please select a package first.');
@@ -376,7 +376,7 @@ function nextBookingStep() {
             return;
         }
     }
-    
+
     currentBookingStep++;
     if (currentBookingStep === 3) {
         generateBookingSummary();
@@ -403,7 +403,7 @@ function updateBookingProgress() {
             step.classList.remove('active');
         }
     });
-    
+
     // Show/hide appropriate steps
     document.querySelectorAll('.booking-step').forEach((step, index) => {
         if (index + 1 === currentBookingStep) {
@@ -418,7 +418,7 @@ function updateBookingButtons() {
     const prevBtn = document.getElementById('prev-step');
     const nextBtn = document.getElementById('next-step');
     const submitBtn = document.getElementById('submit-booking');
-    
+
     if (prevBtn) prevBtn.style.display = currentBookingStep > 1 ? 'block' : 'none';
     if (nextBtn) nextBtn.style.display = currentBookingStep < 3 ? 'block' : 'none';
     if (submitBtn) submitBtn.style.display = currentBookingStep === 3 ? 'block' : 'none';
@@ -427,7 +427,7 @@ function updateBookingButtons() {
 function validateBookingForm() {
     const requiredFields = ['full_name', 'email', 'phone', 'travelers', 'travel_date'];
     let isValid = true;
-    
+
     requiredFields.forEach(field => {
         const input = document.querySelector(`[name="${field}"]`);
         if (!input || !input.value.trim()) {
@@ -437,18 +437,18 @@ function validateBookingForm() {
             return;
         }
     });
-    
+
     return isValid;
 }
 
 function generateBookingSummary() {
     console.log('generateBookingSummary called');
-    
+
     const bookingSummary = document.getElementById('booking-summary');
     if (!bookingSummary) return;
-    
+
     const formData = new FormData(document.getElementById('booking-form'));
-    
+
     const summaryHtml = `
         <div class="booking-summary-content">
             <div class="summary-section">
@@ -479,18 +479,18 @@ function generateBookingSummary() {
             </div>
         </div>
     `;
-    
+
     bookingSummary.innerHTML = summaryHtml;
 }
 
 function handleBookingSubmission(formData) {
     console.log('handleBookingSubmission called');
-    
+
     const submitBtn = document.getElementById('submit-booking');
     if (!submitBtn) return;
-    
+
     const originalText = submitBtn.innerHTML;
-    
+
     submitBtn.innerHTML = '<div class="spinner"></div>Submitting...';
     submitBtn.disabled = true;
 
@@ -508,13 +508,13 @@ function handleBookingSubmission(formData) {
         };
 
         console.log('Booking Submission Data:', bookingData);
-        
+
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        
+
         closeModal('booking-modal');
         showSuccessModal('Booking inquiry submitted successfully! Our team will contact you within 24 hours to confirm your booking and provide payment details.');
-        
+
         selectedPackage = null;
         currentBookingStep = 1;
     }, 2500);
@@ -549,7 +549,7 @@ function showTestimonial(index) {
 // Destination details
 function showDestinationDetails(destination) {
     console.log('showDestinationDetails called:', destination);
-    
+
     const destinationInfo = {
         'port-blair': {
             title: 'Port Blair - Historical Capital',
@@ -570,18 +570,18 @@ function showDestinationDetails(destination) {
             activities: ['Sunset Viewing', 'Beach Walking', 'Cycling', 'Photography', 'Bird Watching', 'Swimming']
         }
     };
-    
+
     const info = destinationInfo[destination];
     if (!info) {
         alert('Destination information not available');
         return;
     }
-    
+
     const modalTitle = document.getElementById('modal-title');
     const modalBody = document.getElementById('modal-body');
-    
+
     modalTitle.textContent = info.title;
-    
+
     const destinationHtml = `
         <div class="destination-details">
             <p class="destination-description">${info.description}</p>
@@ -610,7 +610,7 @@ function showDestinationDetails(destination) {
             </div>
         </div>
     `;
-    
+
     modalBody.innerHTML = destinationHtml;
     showModal('package-modal');
 }
@@ -618,12 +618,12 @@ function showDestinationDetails(destination) {
 // Quick inquiry handler
 function handleQuickInquiry(formData) {
     console.log('handleQuickInquiry called');
-    
+
     const submitBtn = document.querySelector('#quick-inquiry-form button[type="submit"]');
     if (!submitBtn) return;
-    
+
     const originalText = submitBtn.innerHTML;
-    
+
     submitBtn.innerHTML = '<div class="spinner"></div>Processing...';
     submitBtn.disabled = true;
 
@@ -636,12 +636,12 @@ function handleQuickInquiry(formData) {
         };
 
         console.log('Quick Inquiry Data:', inquiryData);
-        
+
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        
+
         showSuccessModal('Thank you for your inquiry! We will contact you within 2 hours with a personalized quote.');
-        
+
         const form = document.getElementById('quick-inquiry-form');
         const heroFormContainer = document.getElementById('hero-form');
         if (form) form.reset();
@@ -652,12 +652,12 @@ function handleQuickInquiry(formData) {
 // Contact form handler
 function handleContactForm(formData) {
     console.log('handleContactForm called');
-    
+
     const submitBtn = document.querySelector('#contact-form button[type="submit"]');
     if (!submitBtn) return;
-    
+
     const originalText = submitBtn.innerHTML;
-    
+
     submitBtn.innerHTML = '<div class="spinner"></div>Sending...';
     submitBtn.disabled = true;
 
@@ -671,12 +671,12 @@ function handleContactForm(formData) {
         };
 
         console.log('Contact Form Data:', contactData);
-        
+
         submitBtn.innerHTML = originalText;
         submitBtn.disabled = false;
-        
+
         showSuccessModal('Thank you for your message! We will respond within 24 hours.');
-        
+
         const form = document.getElementById('contact-form');
         if (form) form.reset();
     }, 2000);
@@ -685,7 +685,7 @@ function handleContactForm(formData) {
 // Initialize application
 function initializeApp() {
     console.log('Initializing Networld Tours application...');
-    
+
     try {
         initializePackageButtons();
         initializeNavigation();
@@ -694,7 +694,7 @@ function initializeApp() {
         initializeScrollEffects();
         initializeTestimonials();
         setMinDate();
-        
+
         console.log('Application initialized successfully');
     } catch (error) {
         console.error('Error initializing application:', error);
@@ -704,35 +704,35 @@ function initializeApp() {
 // Initialize package buttons with proper event listeners
 function initializePackageButtons() {
     console.log('Initializing package buttons...');
-    
+
     // Wait for DOM to be fully rendered, then attach event listeners
     setTimeout(() => {
         const packageCards = document.querySelectorAll('.package-card');
         console.log('Found package cards:', packageCards.length);
-        
+
         packageCards.forEach((card, index) => {
             const category = card.getAttribute('data-category');
             const viewButton = card.querySelector('button');
-            
+
             console.log(`Processing card ${index}: category=${category}, button found=${!!viewButton}`);
-            
+
             if (viewButton && category) {
                 // Remove any existing listeners
                 const newButton = viewButton.cloneNode(true);
                 viewButton.parentNode.replaceChild(newButton, viewButton);
-                
+
                 // Add new event listener
-                newButton.addEventListener('click', function(e) {
+                newButton.addEventListener('click', function (e) {
                     e.preventDefault();
                     e.stopPropagation();
                     console.log(`Package button clicked for category: ${category}`);
                     viewPackages(category);
                 });
-                
+
                 console.log(`Event listener attached to ${category} package button`);
             }
         });
-        
+
         console.log('Package buttons initialization completed');
     }, 100);
 }
@@ -740,13 +740,13 @@ function initializePackageButtons() {
 // Navigation functionality
 function initializeNavigation() {
     console.log('Initializing navigation...');
-    
+
     const hamburger = document.getElementById('hamburger');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
     if (hamburger && navMenu) {
-        hamburger.addEventListener('click', function() {
+        hamburger.addEventListener('click', function () {
             hamburger.classList.toggle('active');
             navMenu.classList.toggle('active');
         });
@@ -754,7 +754,7 @@ function initializeNavigation() {
 
     // Close mobile menu when clicking on links
     navLinks.forEach(link => {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function () {
             if (hamburger && navMenu) {
                 hamburger.classList.remove('active');
                 navMenu.classList.remove('active');
@@ -768,9 +768,9 @@ function initializeNavigation() {
             e.preventDefault();
             const targetId = this.getAttribute('href');
             const target = document.querySelector(targetId);
-            
+
             console.log('Navigation link clicked:', targetId);
-            
+
             if (target) {
                 target.scrollIntoView({
                     behavior: 'smooth',
@@ -784,13 +784,27 @@ function initializeNavigation() {
     });
 
     // Navbar scroll effect
-    window.addEventListener('scroll', function() {
+    // window.addEventListener('scroll', function() {
+    //     const navbar = document.getElementById('navbar');
+    //     if (navbar) {
+    //         if (window.scrollY > 100) {
+    //             navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+    //             navbar.style.boxShadow = 'var(--shadow-md)';
+    //         } else {
+    //             navbar.style.background = 'rgba(255, 255, 255, 0.95)';
+    //             navbar.style.boxShadow = 'none';
+    //         }
+    //     }
+    // });
+    window.addEventListener('scroll', function () {
         const navbar = document.getElementById('navbar');
         if (navbar) {
             if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(255, 255, 255, 0.98)';
+                navbar.classList.add('scrolled');
+                navbar.style.background = 'rgba(255, 255, 255, 0.98)'; // keep your original inline style for compatibility
                 navbar.style.boxShadow = 'var(--shadow-md)';
             } else {
+                navbar.classList.remove('scrolled');
                 navbar.style.background = 'rgba(255, 255, 255, 0.95)';
                 navbar.style.boxShadow = 'none';
             }
@@ -801,7 +815,7 @@ function initializeNavigation() {
 // Form initialization
 function initializeForms() {
     console.log('Initializing forms...');
-    
+
     // Quick inquiry button and form
     setTimeout(() => {
         const quickInquiryBtn = document.getElementById('quick-inquiry-btn');
@@ -812,8 +826,8 @@ function initializeForms() {
             // Remove existing listeners and add new one
             const newBtn = quickInquiryBtn.cloneNode(true);
             quickInquiryBtn.parentNode.replaceChild(newBtn, quickInquiryBtn);
-            
-            newBtn.addEventListener('click', function(e) {
+
+            newBtn.addEventListener('click', function (e) {
                 e.preventDefault();
                 e.stopPropagation();
                 console.log('Quick inquiry button clicked');
@@ -823,7 +837,7 @@ function initializeForms() {
         }
 
         if (quickInquiryForm) {
-            quickInquiryForm.addEventListener('submit', function(e) {
+            quickInquiryForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 console.log('Quick inquiry form submitted');
                 handleQuickInquiry(new FormData(this));
@@ -833,7 +847,7 @@ function initializeForms() {
         // Contact form
         const contactForm = document.getElementById('contact-form');
         if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
+            contactForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 console.log('Contact form submitted');
                 handleContactForm(new FormData(this));
@@ -843,7 +857,7 @@ function initializeForms() {
         // Booking form
         const bookingForm = document.getElementById('booking-form');
         if (bookingForm) {
-            bookingForm.addEventListener('submit', function(e) {
+            bookingForm.addEventListener('submit', function (e) {
                 e.preventDefault();
                 console.log('Booking form submitted');
                 handleBookingSubmission(new FormData(this));
@@ -855,9 +869,9 @@ function initializeForms() {
 // Modal initialization
 function initializeModals() {
     console.log('Initializing modals...');
-    
+
     // Close modal when clicking outside
-    document.addEventListener('click', function(e) {
+    document.addEventListener('click', function (e) {
         if (e.target.classList.contains('modal-overlay')) {
             const modal = e.target.closest('.modal');
             if (modal) {
@@ -867,7 +881,7 @@ function initializeModals() {
     });
 
     // Close modal with escape key
-    document.addEventListener('keydown', function(e) {
+    document.addEventListener('keydown', function (e) {
         if (e.key === 'Escape') {
             const activeModal = document.querySelector('.modal:not(.hidden)');
             if (activeModal) {
@@ -880,8 +894,8 @@ function initializeModals() {
 // Scroll effects
 function initializeScrollEffects() {
     const backToTop = document.getElementById('back-to-top');
-    
-    window.addEventListener('scroll', function() {
+
+    window.addEventListener('scroll', function () {
         if (backToTop) {
             if (window.scrollY > 300) {
                 backToTop.classList.add('visible');
@@ -890,21 +904,47 @@ function initializeScrollEffects() {
             }
         }
     });
-    
+
     if (backToTop) {
-        backToTop.addEventListener('click', function() {
+        backToTop.addEventListener('click', function () {
             window.scrollTo({
                 top: 0,
                 behavior: 'smooth'
             });
         });
     }
+    initializeParallaxHero();
+}
+function initializeParallaxHero() {
+    try {
+        const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReduced) return;
+        const heroImg = document.querySelector('.hero-bg-img');
+        if (!heroImg) return;
+        let ticking = false;
+        const onScroll = () => {
+            if (!ticking) {
+                window.requestAnimationFrame(() => {
+                    const y = window.scrollY || 0;
+                    // Subtle translate and scale for depth
+                    const translate = Math.min(y * 0.06, 24);
+                    const scale = 1.04 + Math.min(y * 0.0002, 0.02);
+                    heroImg.style.transform = `translateY(${translate}px) scale(${scale})`;
+                    ticking = false;
+                });
+                ticking = true;
+            }
+        };
+        window.addEventListener('scroll', onScroll, { passive: true });
+    } catch (e) {
+        console.warn('Parallax init failed', e);
+    }
 }
 
 // Testimonials
 function initializeTestimonials() {
     showTestimonial(currentTestimonial);
-    
+
     setInterval(() => {
         nextTestimonial();
     }, 5000);
@@ -915,7 +955,7 @@ function setMinDate() {
     const today = new Date();
     const tomorrow = new Date(today);
     tomorrow.setDate(tomorrow.getDate() + 1);
-    
+
     const dateInputs = document.querySelectorAll('input[type="date"]');
     dateInputs.forEach(input => {
         input.min = tomorrow.toISOString().split('T')[0];
